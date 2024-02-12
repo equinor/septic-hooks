@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "septic_hooks"
+version = "0.0.1"
+dependencies = [
+    "pandas[excel]"
+]
+requires-python = ">=3.10"
+description = "Pre-commit hooks useful for Septic development"
+
+[project.scripts]
+export_to_csv = "export:main"
