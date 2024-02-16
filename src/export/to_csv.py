@@ -17,7 +17,7 @@ def main(argv: Sequence[str] | None = None):
         output_path = Path(filename).parent / "scg_data"
         if not output_path.exists():
             os.makedirs(output_path.resolve())
-        wb = xl.load_workbook(filename)
+        wb = xl.load_workbook(filename, data_only=True)
         for sheet in wb.sheetnames:
             working_sheet = wb.get_sheet_by_name(sheet)
             output_file = output_path / f"{sheet}.csv"
